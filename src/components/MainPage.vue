@@ -8,6 +8,9 @@ export default {
 };
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+main {
+  height: 800px;
+  background-color: #434343;
+}
 </style>

@@ -20,4 +20,7 @@ export default {
 
 <style lang="scss">
   @import "../node_modules/bootstrap/scss/bootstrap";
+  :root {
+  --bs-light-rgb: 0, 0, 0;
+}
 </style>

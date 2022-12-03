@@ -19,61 +19,8 @@
         </button>
         <div
           id="navbarScroll"
-          class="collapse navbar-collapse"
+          class="collapse navbar-collapse justify-content-end"
         >
-          <ul
-            class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
-            style="--bs-scroll-height: 100px;"
-          >
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="#"
-              >Home</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#"
-              >Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Link
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="#"
-                  >Action</a>
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="#"
-                  >Another action</a>
-                </li>
-                <li><hr class="dropdown-divider"></li>
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="#"
-                  >Something else here</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Link</a>
-            </li>
-          </ul>
           <form
             class="d-flex"
             role="search"
@@ -84,12 +31,16 @@
               placeholder="Search"
               aria-label="Search"
             >
-            <button
-              class="btn btn-outline-success"
-              type="submit"
+            <select
+              id=""
+              class="form-select"
+              name=""
+              aria-label="Default select example"
             >
-              Search
-            </button>
+              <option value="">
+                Choose genre
+              </option>
+            </select>
           </form>
         </div>
       </div>
@@ -103,6 +54,18 @@ export default {
 };
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.navbar-brand {
+  color: red;
+  font-size: 1.5rem;
+}
+.navbar-brand:hover {
+  color: red;
+}
+.navbar-toggler{
+  border: var(--bs-border-width) solid white;
+}
+.navbar {
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e");
+}
 </style>
