@@ -10,7 +10,7 @@
         :title="objMovies.title"
         :original-title="objMovies.original_title"
         :language="objMovies.original_language"
-        :score="objMovies.vote_average"
+        :score="convertScore(objMovies.vote_average)"
         :img-url="generateUrl(objMovies.poster_path)"
       />
     </div>
@@ -25,7 +25,7 @@
         :title="objTV.name"
         :original-title="objTV.original_name"
         :language="objTV.original_language"
-        :score="objTV.vote_average"
+        :score="convertScore(objTV.vote_average)"
         :img-url="generateUrl(objTV.poster_path)"
       />
     </div>
@@ -58,6 +58,9 @@ export default {
         return this.baseImgUrl + this.imgSize + path;
       }
       return null;
+    },
+    convertScore(score) {
+      return parseFloat((score / 2).toFixed(1));
     },
   },
 };
