@@ -1,17 +1,20 @@
 <template>
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <img
-          src="url(https://pad.mymovies.it/filmclub/2009/06/146/locandina.jpg)"
-          alt="Avatar"
-          style="width:300px;height:300px;"
-        >
-      </div>
-      <div class="flip-card-back">
-        <h1>John Doe</h1>
-        <p>Architect & Engineer</p>
-        <p>We love that guy</p>
+  <div class="col">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img
+            :src="imgUrl"
+            alt="No cover"
+            style="width:300px;height:350px;"
+          >
+        </div>
+        <div class="flip-card-back">
+          <p>{{ title }}</p>
+          <p>{{ originalTitle }}</p>
+          <p>{{ language }}</p>
+          <p>{{ score }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -21,6 +24,13 @@
 
 export default {
   name: 'ItemCard',
+  props: {
+    title: String,
+    originalTitle: String,
+    language: String,
+    score: Number,
+    imgUrl: String,
+  },
 };
 </script>
 

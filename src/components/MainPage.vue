@@ -3,24 +3,31 @@
     <h2 v-if="arrMovies.length">
       Movies
     </h2>
-    <div class="row row-cols-4 g-5">
-      <ItemCard />
+    <div class="row row-cols-auto g-4">
+      <ItemCard
+        v-for="objMovies in arrMovies"
+        :key="objMovies.id"
+        :title="objMovies.title"
+        :original-title="objMovies.original_title"
+        :language="objMovies.original_language"
+        :score="objMovies.vote_average"
+        :img-url="'https://image.tmdb.org/t/p/w342' + objMovies.poster_path"
+      />
     </div>
-    <!-- <ul
-      v-for="objMovies in arrMovies"
-      :key="objMovies.id"
-    >
-      <li>{{ objMovies.title }}</li>
-      <li>{{ objMovies.original_title }}</li>
-      <li><lang-flag :iso="objMovies.original_language" /></li>
-      <li>{{ objMovies.vote_average }}</li>
-    </ul> -->
 
     <h2 v-if="arrTV.length">
       TV Shows
     </h2>
-    <div class="row row-cols-4 g-5">
-      <ItemCard />
+    <div class="row row-cols-auto g-4">
+      <ItemCard
+        v-for="objTV in arrTV"
+        :key="objTV.id"
+        :title="objTV.name"
+        :original-title="objTV.original_name"
+        :language="objTV.original_language"
+        :score="objTV.vote_average"
+        :img-url="'https://image.tmdb.org/t/p/w342' + objTV.poster_path"
+      />
     </div>
   </main>
 </template>
@@ -45,6 +52,7 @@ export default {
 <style lang="scss" scoped>
 h2 {
   color: white;
+  margin: 1rem 0;
 }
 li {
   color: white;
