@@ -1,36 +1,40 @@
 <template>
-  <main>
+  <main class="container-fluid text-center bg-secondary p-4">
     <h2 v-if="arrMovies.length">
       Movies
     </h2>
-    <ul
+    <div class="row row-cols-4 g-5">
+      <ItemCard />
+    </div>
+    <!-- <ul
       v-for="objMovies in arrMovies"
       :key="objMovies.id"
     >
       <li>{{ objMovies.title }}</li>
       <li>{{ objMovies.original_title }}</li>
-      <li>{{ objMovies.original_language }}</li>
+      <li><lang-flag :iso="objMovies.original_language" /></li>
       <li>{{ objMovies.vote_average }}</li>
-    </ul>
+    </ul> -->
 
     <h2 v-if="arrTV.length">
       TV Shows
     </h2>
-    <ul
-      v-for="objTV in arrTV"
-      :key="objTV.id"
-    >
-      <li>{{ objTV.name }}</li>
-      <li>{{ objTV.original_name }}</li>
-      <li>{{ objTV.original_language }}</li>
-      <li>{{ objTV.vote_average }}</li>
-    </ul>
+    <div class="row row-cols-4 g-5">
+      <ItemCard />
+    </div>
   </main>
 </template>
 
 <script>
+// import LangFlag from 'vue-lang-code-flags';
+import ItemCard from '@/components/ItemCard.vue';
+
 export default {
   name: 'MainPage',
+  components: {
+    ItemCard,
+    // LangFlag,
+  },
   props: {
     arrMovies: Array,
     arrTV: Array,
@@ -39,8 +43,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-main {
-  background-color: #434343;
+h2 {
+  color: white;
 }
 li {
   color: white;
