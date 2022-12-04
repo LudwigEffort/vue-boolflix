@@ -11,7 +11,7 @@
         :original-title="objMovies.original_title"
         :language="objMovies.original_language"
         :score="objMovies.vote_average"
-        :img-url="'https://image.tmdb.org/t/p/w342' + objMovies.poster_path"
+        :img-url="generateUrl(objMovies.poster_path)"
       />
     </div>
 
@@ -26,7 +26,7 @@
         :original-title="objTV.original_name"
         :language="objTV.original_language"
         :score="objTV.vote_average"
-        :img-url="'https://image.tmdb.org/t/p/w342' + objTV.poster_path"
+        :img-url="generateUrl(objTV.poster_path)"
       />
     </div>
   </main>
@@ -45,6 +45,20 @@ export default {
   props: {
     arrMovies: Array,
     arrTV: Array,
+  },
+  data() {
+    return {
+      baseImgUrl: 'https://image.tmdb.org/t/p/',
+      imgSize: 'w342',
+    };
+  },
+  methods: {
+    generateUrl(path) {
+      if (path) {
+        return this.baseImgUrl + this.imgSize + path;
+      }
+      return null;
+    },
   },
 };
 </script>
