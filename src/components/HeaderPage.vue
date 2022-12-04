@@ -24,8 +24,10 @@
           <form
             class="d-flex"
             role="search"
+            @submit.prevent="$emit('querySearch', queryString)"
           >
             <input
+              v-model="queryString"
               class="form-control me-2"
               type="search"
               placeholder="Search"
@@ -51,6 +53,11 @@
 <script>
 export default {
   name: 'HeaderPage',
+  data() {
+    return {
+      queryString: '',
+    };
+  },
 };
 </script>
 

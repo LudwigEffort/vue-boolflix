@@ -1,11 +1,12 @@
 <template>
   <section>
-    <HeaderPage />
+    <HeaderPage @querySearch="search" />
     <MainPage />
   </section>
 </template>
 
 <script>
+import axios from 'axios';
 import HeaderPage from './components/HeaderPage.vue';
 import MainPage from './components/MainPage.vue';
 
@@ -14,6 +15,11 @@ export default {
   components: {
     HeaderPage,
     MainPage,
+  },
+  methods: {
+    search(queryString) {
+
+    },
   },
 };
 </script>
