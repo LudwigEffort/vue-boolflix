@@ -12,7 +12,7 @@
         <div class="flip-card-back">
           <p>{{ title }}</p>
           <p>{{ originalTitle }}</p>
-          <p>{{ language }}</p>
+          <p><lang-flag :iso="language" /></p>
           <p>{{ score }}</p>
         </div>
       </div>
@@ -21,9 +21,13 @@
 </template>
 
 <script>
+import LangFlag from 'vue-lang-code-flags';
 
 export default {
   name: 'ItemCard',
+  components: {
+    LangFlag,
+  },
   props: {
     title: String,
     originalTitle: String,
