@@ -1,7 +1,7 @@
 <template>
   <section>
     <HeaderPage @querySearch="search" />
-    <MainPage />
+    <MainPage :arr-movies="arrMovies" />
   </section>
 </template>
 
