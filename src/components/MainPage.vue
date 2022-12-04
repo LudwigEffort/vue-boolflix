@@ -1,8 +1,8 @@
 <template>
   <main class="container-fluid text-center bg-secondary p-4">
-    <h2 v-if="arrMovies.length">
+    <h1 v-if="arrMovies.length">
       Movies
-    </h2>
+    </h1>
     <div class="row row-cols-auto g-4">
       <ItemCard
         v-for="objMovies in arrMovies"
@@ -15,9 +15,9 @@
       />
     </div>
 
-    <h2 v-if="arrTV.length">
+    <h1 v-if="arrTV.length">
       TV Shows
-    </h2>
+    </h1>
     <div class="row row-cols-auto g-4">
       <ItemCard
         v-for="objTV in arrTV"
@@ -64,7 +64,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h2 {
+h1 {
   color: white;
   margin: 1rem 0;
 }

@@ -40,6 +40,7 @@ export default {
 
 <style lang="scss" scoped>
 .flip-card {
+  border-radius: 15px;
   background-color: transparent;
   width: 300px;
   height: 300px;
@@ -47,6 +48,7 @@ export default {
 }
 
 .flip-card-inner {
+  border-radius: 15px;
   position: relative;
   width: 100%;
   height: 100%;
@@ -57,10 +59,12 @@ export default {
 }
 
 .flip-card:hover .flip-card-inner {
+  border-radius: 15px;
   transform: rotateY(180deg);
 }
 
 .flip-card-front, .flip-card-back {
+  border-radius: 15px;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -69,11 +73,17 @@ export default {
 }
 
 .flip-card-front {
+  border-radius: 15px;
   background-color: #bbb;
   color: black;
 }
 
+.flip-card-front img {
+  border-radius: 15px;
+}
+
 .flip-card-back {
+  border-radius: 15px;
   padding: 1rem;
   text-align: start;
   background-color: #2980b9;
