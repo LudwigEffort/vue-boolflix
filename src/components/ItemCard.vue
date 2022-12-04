@@ -10,10 +10,10 @@
           >
         </div>
         <div class="flip-card-back">
-          <p>{{ title }}</p>
-          <p>{{ originalTitle }}</p>
-          <p><lang-flag :iso="language" /></p>
-          <p>{{ score }}</p>
+          <p>Title: {{ title }}</p>
+          <p>Original Title: {{ originalTitle }}</p>
+          <p>Language: <lang-flag :iso="language" /></p>
+          <p>Rating: {{ score }}</p>
         </div>
       </div>
     </div>
