@@ -40,7 +40,7 @@ export default {
   name: 'MainPage',
   components: {
     ItemCard,
-    // LangFlag,
+    //  LangFlag,
   },
   props: {
     arrMovies: Array,
