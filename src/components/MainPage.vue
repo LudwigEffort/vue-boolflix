@@ -60,6 +60,7 @@ export default {
       return null;
     },
     convertScore(score) {
+      const maxScore = 5;
       const decimal = (parseFloat((score / 2).toFixed(1))) % 1;
       let finalDecimal = 0;
       if (decimal >= 0.3 && decimal <= 0.7) {
@@ -67,7 +68,10 @@ export default {
       } else if (decimal > 0.7) {
         finalDecimal = 1;
       } else { finalDecimal = 0; }
-      return (Math.floor(score / 2) + finalDecimal);
+      return {
+        finalScore: Math.floor(score / 2) + finalDecimal,
+        maxScore,
+      };
     },
   },
 };
