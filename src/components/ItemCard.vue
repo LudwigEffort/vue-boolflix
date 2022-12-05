@@ -14,6 +14,18 @@
           <p>Original Title: {{ originalTitle }}</p>
           <p>Language: <lang-flag :iso="language" /></p>
           <p>Rating: {{ score }}</p>
+          <font-awesome-icon
+            icon="fa-solid fa-star"
+            :style="{color: 'yellow'}"
+          />
+          <font-awesome-icon
+            icon="fa-solid fa-star-half-stroke"
+            :style="{color: 'yellow'}"
+          />
+          <font-awesome-icon
+            icon="fa-regular fa-star"
+            :style="{color: 'yellow'}"
+          />
         </div>
       </div>
     </div>
