@@ -60,7 +60,14 @@ export default {
       return null;
     },
     convertScore(score) {
-      return parseFloat((score / 2).toFixed(1));
+      const decimal = (parseFloat((score / 2).toFixed(1))) % 1;
+      let finalDecimal = 0;
+      if (decimal >= 0.3 && decimal <= 0.7) {
+        finalDecimal = 0.5;
+      } else if (decimal > 0.7) {
+        finalDecimal = 1;
+      } else { finalDecimal = 0; }
+      return (Math.floor(score / 2) + finalDecimal);
     },
   },
 };
